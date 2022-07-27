@@ -7,8 +7,8 @@ const calenderItemSchema = new Schema({
     ends_date:{type:Date, required:true},
     title:{type:String, min: 2, max:150, required:true},
     description:{type:String, min: 2, max:500, required:true},
-    associated_item_id_1: [{ type: Schema.Types.ObjectId, ref: "ActivityList" }],
-    associated_item_id_2: [{ type: Schema.Types.ObjectId, ref: "Contact" }],
+    activityList: [{ type: Schema.Types.ObjectId, ref: "ActivityList" }],
+    contacts: [{ type: Schema.Types.ObjectId, ref: "Contact" }],
     category: {
         type:String,
         enum:['Social events', 'Reminders', 'Birthdays', 'Vacation', 'Sports', 'Personal']

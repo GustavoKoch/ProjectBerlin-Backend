@@ -9,7 +9,9 @@ const {
   fullUpdate_one_calenderItem,
   delete_one_calenderItem,
   delete_many_calenderItems,
-  delete_all_calenderItems
+  delete_all_calenderItems,
+  add_ContactsToCalenderItem,
+  add_ActivityListToCalenderItem
 } = require("../controllers/calenderItemController");
 
 router
@@ -18,8 +20,17 @@ router
 .post(create_one_calenderItem)
 .delete(delete_many_calenderItems);
 router
+.route("/addContacts")
+.patch(add_ContactsToCalenderItem) 
+router
+.route("/addActivityList")
+.patch(add_ActivityListToCalenderItem) 
+
+
+router
 .route("/deleteAll")
 .delete(delete_all_calenderItems);
+
 
 router
 .route("/:id")

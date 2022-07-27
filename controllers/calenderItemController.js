@@ -4,7 +4,7 @@ const CalenderItem = require("../models/CalenderItem");
 const list_all_calenderItems = async(req, res) => {
  
     try {
-      const calenderItems = await CalenderItem.find({});
+      const calenderItems = await CalenderItem.find({}).populate("contacts").populate("activityList");
      
       if (calenderItems.length===0)
       return res.status(404).send("There are no Items in this Calender to show");
@@ -26,11 +26,51 @@ const create_one_calenderItem= async (req, res) => {
   }
 };
 
+/* Add Contacts to Calender Item */
+const add_ContactsToCalenderItem = async (req, res) => {
+  const [{ calenderItemId, contactsId }] = req.body;
+  console.log(calenderItemId);
+  try {
+    /* console.log(taskId); */
+    const updatedCalenderItem = await CalenderItem.findByIdAndUpdate(
+      calenderItemId,
+      { //addToSet is better than push because avoids repeated id
+        $addToSet: { contacts: contactsId },
+      },
+      { new: true }
+    );
+    console.log(updatedCalenderItem);
+    res.json(updatedCalenderItem);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
+
+/* Add ActivityList  to Calender Item */
+const add_ActivityListToCalenderItem = async (req, res) => {
+  const [{ calenderItemId, activityListId }] = req.body;
+  console.log(calenderItemId);
+  try {
+    /* console.log(taskId); */
+    const updatedCalenderItem = await CalenderItem.findByIdAndUpdate(
+      calenderItemId,
+      { //addToSet is better than push because avoids repeated id
+        $addToSet: { activityList: activityListId },
+      },
+      { new: true }
+    );
+    console.log(updatedCalenderItem);
+    res.json(updatedCalenderItem);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
+
 /* GET ONE */
 const find_one_calenderItem = async (req, res) => {
   const { id } = req.params;
   try {
-    const specificCalenderItem = await CalenderItem.findById(id);
+    const specificCalenderItem = await CalenderItem.find({_id:id}).populate("contacts").populate("activityList");
     if (!specificCalenderItem)
       return res.status(404).send("This item does not exist in the calender");
     res.json(specificCalenderItem);
@@ -153,5 +193,7 @@ module.exports = {
   fullUpdate_one_calenderItem,
   delete_one_calenderItem,
   delete_many_calenderItems,
-  delete_all_calenderItems
+  delete_all_calenderItems,
+  add_ContactsToCalenderItem,
+  add_ActivityListToCalenderItem 
 };

@@ -1,4 +1,3 @@
-
 [
     {
         "first_name":"Bugs", 
@@ -6,9 +5,7 @@
         "birthday":"2022-12-03T21:00:00Z",
         "nameday":"",
         "category": "friend",  
-        "avatar_url":"https://findicons.com/files/icons/206/looney_tunes/300/bugs_bunny_country.png",
-        "calenderItem":[],
-        "activityList":[]
+        "avatar_url":"https://findicons.com/files/icons/206/looney_tunes/300/bugs_bunny_country.png"
     },
     {
         "first_name":"Luky", 
@@ -16,9 +13,8 @@
         "birthday":"2022-12-04T21:00:00Z",
         "nameday":"",
         "category": "friend",  
-        "avatar_url":"https://findicons.com/files/icons/206/looney_tunes/300/bugs_bunny_country.png",
-        "calenderItem":[],
-        "activityList":[]
+        "avatar_url":"https://findicons.com/files/icons/206/looney_tunes/300/bugs_bunny_country.png"
+
     },
     {
         "first_name":"Roger", 
@@ -26,9 +22,8 @@
         "birthday":"2022-12-05T21:00:00Z",
         "nameday":"",
         "category": "friend",  
-        "avatar_url":"https://findicons.com/files/icons/206/looney_tunes/300/bugs_bunny_country.png",
-        "calenderItem":[],
-        "activityList":[]
+        "avatar_url":"https://findicons.com/files/icons/206/looney_tunes/300/bugs_bunny_country.png"
+
     }
 ]
 

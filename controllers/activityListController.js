@@ -4,7 +4,7 @@ const ActivityList = require("../models/ActivityList");
 const list_all_activityLists = async(req, res) => {
  
     try {
-      const activityLists = await ActivityList.find({});
+      const activityLists = await ActivityList.find({}).populate("tasks");
      
       if (activityLists.length===0)
       return res.status(404).send("There are no ActivityLists to show");
@@ -26,11 +26,32 @@ const create_one_activityList= async (req, res) => {
   }
 };
 
+
+/* Add Tasks to Lists */
+const add_ItemsToList = async (req, res) => {
+  const [{ listId, taskId }] = req.body;
+  console.log(listId);
+  try {
+    /* console.log(taskId); */
+    const updatedList = await ActivityList.findByIdAndUpdate(
+      listId,
+      { //addToSet is better than push because avoids repeated id
+        $addToSet: { tasks: taskId },
+      },
+      { new: true }
+    );
+    res.json(updatedList);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
+
+
 /* GET ONE */
 const find_one_activityList = async (req, res) => {
   const { id } = req.params;
   try {
-    const specificactivityList = await ActivityList.findById(id);
+    const specificactivityList = await ActivityList.find({_id:id}).populate("tasks");
     if (!specificactivityList)
       return res.status(404).send("This item does not exist in the calender");
     res.json(specificactivityList);
@@ -153,5 +174,6 @@ module.exports = {
   fullUpdate_one_activityList,
   delete_one_activityList,
   delete_many_activityLists,
-  delete_all_activityLists
+  delete_all_activityLists,
+  add_ItemsToList
 };

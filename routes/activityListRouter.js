@@ -9,7 +9,8 @@ const {
   fullUpdate_one_activityList,
   delete_one_activityList,
   delete_many_activityLists,
-  delete_all_activityLists
+  delete_all_activityLists,
+  add_ItemsToList
 } = require("../controllers/activityListController");
 
 router
@@ -17,6 +18,10 @@ router
 .get(list_all_activityLists)
 .post(create_one_activityList)
 .delete(delete_many_activityLists);
+
+router
+.route("/addTasks")
+.patch(add_ItemsToList) 
 router
 .route("/deleteAll")
 .delete(delete_all_activityLists);
@@ -27,6 +32,8 @@ router
 .patch(partUpdate_one_activityList) 
 .put(fullUpdate_one_activityList)
 .delete(delete_one_activityList)
+
+
 
 
 

@@ -12,8 +12,7 @@ const contactSchema = new Schema({
         enum:['family', 'friend', 'others']
     },  
     avatar_url:{type:String, min: 2, max:500},
-    calenderItem: [{ type: Schema.Types.ObjectId, ref: "CalenderItem" }],
-    activityList: [{ type: Schema.Types.ObjectId, ref: "ActivityList" }],
+
 
 }, {timestamps:true}
 )

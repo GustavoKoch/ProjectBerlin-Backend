@@ -11,8 +11,7 @@ const taskSchema = new Schema({
         type:String,
         enum:['urgent', 'important', 'would-be-nice', 'idea']
     },  
-    ActivityList: [{ type: Schema.Types.ObjectId, ref: "ActivityList" }],
-
+  
 }, {timestamps:true}
 )
 
