@@ -1,0 +1,81 @@
+@id=62e0f8cd94c3ff0968b2469c
+@host=http://localhost:3001
+
+
+GET {{host}}
+
+### Create a new contactsItem
+POST {{host}}/contacts
+Content-Type:application/json
+
+[
+    {
+        "first_name":"Bugs", 
+        "last_name":"Bunny", 
+        "birthday":"2022-12-03T21:00:00Z",
+        "nameday":"",
+        "category": "friend",  
+        "avatar_url":"https://findicons.com/files/icons/206/looney_tunes/300/bugs_bunny_country.png",
+        "calenderItem":[],
+        "activityList":[]
+    },
+    {
+        "first_name":"Luky", 
+        "last_name":"Luke", 
+        "birthday":"2022-12-04T21:00:00Z",
+        "nameday":"",
+        "category": "friend",  
+        "avatar_url":"https://findicons.com/files/icons/206/looney_tunes/300/bugs_bunny_country.png",
+        "calenderItem":[],
+        "activityList":[]
+    },
+    {
+        "first_name":"Roger", 
+        "last_name":"Rabbit", 
+        "birthday":"2022-12-05T21:00:00Z",
+        "nameday":"",
+        "category": "friend",  
+        "avatar_url":"https://findicons.com/files/icons/206/looney_tunes/300/bugs_bunny_country.png",
+        "calenderItem":[],
+        "activityList":[]
+    }
+]
+
+### Get all contactsItems
+GET {{host}}/contacts/
+
+### Get one contactsItem by id
+GET {{host}}/contacts/{{id}}
+
+### Patch one contactsItem
+PATCH {{host}}/contacts/{{id}}
+Content-Type:application/json
+
+{
+   "key":"nameday",
+   "value":"2022-12-14T21:00:00.000Z"
+}
+
+### UPDATE one Contact
+PUT {{host}}/contacts/{{id}}
+Content-Type:application/json
+
+{
+    "last_name":"Carrots",
+    "category":"others"   
+}
+
+### Delete
+DELETE {{host}}/contacts/{{id}}
+
+### Delete many --> 
+DELETE {{host}}/contacts
+Content-Type:application/json
+
+{
+   "key":"category",
+   "value":"others"
+}
+
+### Delete All ccontactsItems
+DELETE {{host}}/contacts/deleteAll

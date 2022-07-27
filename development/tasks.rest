@@ -1,0 +1,98 @@
+@id=62e1099ac2c6e844f73edc88
+@host=http://localhost:3001
+
+
+GET {{host}}
+
+### Create a new Item
+POST {{host}}/tasks
+Content-Type:application/json
+
+[
+{
+    "starts_date":"2022-12-12T10:10:00.000Z",
+    "ends_date":"2022-12-12T10:12:00.000Z",
+    "num": 1,
+    "description":"2 x Cucumber",
+    "category": "important",      
+    "ActivityList": []
+},
+{
+    "starts_date":"2022-12-12T10:10:00.000Z",
+    "ends_date":"2022-12-12T10:12:00.000Z",
+    "num": 1,
+    "description":"1L Milk",
+    "category": "important",      
+    "ActivityList": []
+},
+{
+    "starts_date":"2022-12-12T10:10:00.000Z",
+    "ends_date":"2022-12-12T10:12:00.000Z",
+    "num": 1,
+    "description":"2 Onions",
+    "category": "important",      
+    "ActivityList": []
+},
+{
+    "starts_date":"2022-12-12T10:10:00.000Z",
+    "ends_date":"2022-12-12T10:12:00.000Z",
+    "num": 1,
+    "description":"Potatoes",
+    "category": "important",      
+    "ActivityList": []
+},
+{
+    "starts_date":"2022-12-12T10:10:00.000Z",
+    "ends_date":"2022-12-12T10:12:00.000Z",
+    "num": 1,
+    "description":"500gr Meat",
+    "category": "important",      
+    "ActivityList": []
+},
+{
+    "starts_date":"2022-12-12T10:10:00.000Z",
+    "ends_date":"2022-12-12T10:12:00.000Z",
+    "num": 1,
+    "description":"1Kg Tomatoes",
+    "category": "important",      
+    "ActivityList": []
+}
+]
+### Get all Item
+GET {{host}}/tasks/
+
+### Get one tasksItem by id
+GET {{host}}/tasks/{{id}}
+
+### Patch one Item
+PATCH {{host}}/tasks/{{id}}
+Content-Type:application/json
+
+{
+   "key":"description",
+   "value":"Paid nothing in advance"
+}
+
+### UPDATE one Item
+PUT {{host}}/tasks/{{id}}
+Content-Type:application/json
+
+{
+    "starts_date":"2022-12-11T18:00:00.000Z",
+    "description":"2Kg tomatoes"   
+}
+
+### Delete
+DELETE {{host}}/tasks/{{id}}
+
+### Delete many --> "category":"sports"
+DELETE {{host}}/tasks
+Content-Type:application/json
+
+{
+   "key":"description",
+   "value":"2Kg tomatoes"
+}
+
+### Delete All ctasksItems
+DELETE {{host}}/tasks/deleteAll
