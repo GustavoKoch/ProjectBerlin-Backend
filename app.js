@@ -1,3 +1,5 @@
+require("dotenv").config();
+require("./database/client");
 const express = require('express');
 const cors=require("cors");
 
@@ -15,7 +17,7 @@ const activityListRouter = require('./ROUTES/activityListRouter');
 
 const app = express();
 /* console.log(process.env); */
-app.use(cors());
+
 const wellcome = async(req, res) => {
     return res.status(200).send("*****😀 Welcome 👐 to the root this app****");}
 app.get("/", wellcome)
@@ -25,7 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cors());
 
 app.use('/calender', calenderItemRouter);
 app.use('/contacts', contactsRouter);
