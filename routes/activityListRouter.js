@@ -11,7 +11,7 @@ const {
   delete_many_activityLists,
   delete_all_activityLists,
   add_ItemsToList
-} = require("../controllers/activityListController");
+} = require("../CONTROLLERS/activityListController");
 
 router
 .route("/")

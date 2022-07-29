@@ -4,7 +4,7 @@
 
 GET {{host}}
 
-### Create a new calenderItem
+### Create new calenderItems
 POST {{host}}/calender
 Content-Type:application/json
 

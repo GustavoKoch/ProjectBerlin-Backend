@@ -62,8 +62,6 @@ Content-Type: application/json
     "62e129d3a1b07c906e903198","62e129d3a1b07c906e903199", "62e129d3a1b07c906e90319c"    
     ]
 }
-
-
 ]
 ### Get all activityListItems
 GET {{host}}/activityList

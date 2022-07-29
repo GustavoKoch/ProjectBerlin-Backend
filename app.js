@@ -5,11 +5,12 @@ const logger = require('morgan');
 require("dotenv").config();
 require("./database/client");
 
-const calenderItemRouter = require('./routes/calenderItemRouter');
-const contactsRouter = require('./routes/contactsRouter');
-const tasksRouter = require('./routes/tasksRouter');
-const activityListRouter = require('./routes/activityListRouter');
-
+const calenderItemRouter = require('./ROUTES/calenderItemRouter');
+const contactsRouter = require('./ROUTES/contactsRouter');
+const tasksRouter = require('./ROUTES/tasksRouter');
+const activityListRouter = require('./ROUTES/activityListRouter');
+const cors=require("cors");
+app.use(cors());
 
 const app = express();
 /* console.log(process.env); */

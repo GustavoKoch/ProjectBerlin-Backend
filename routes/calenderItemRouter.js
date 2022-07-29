@@ -12,7 +12,7 @@ const {
   delete_all_calenderItems,
   add_ContactsToCalenderItem,
   add_ActivityListToCalenderItem
-} = require("../controllers/calenderItemController");
+} = require("../CONTROLLERS/calenderItemController");
 
 router
 .route("/")

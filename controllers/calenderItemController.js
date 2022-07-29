@@ -1,4 +1,4 @@
-const CalenderItem = require("../models/CalenderItem");
+const CalenderItem = require("../MODELS/CalenderItem");
 
 /* GET ALL */
 const list_all_calenderItems = async(req, res) => {
