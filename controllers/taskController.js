@@ -1,4 +1,4 @@
-const Task = require("../MODELS/Task");
+const Task = require("../models/Task");
 
 /* GET ALL */
 const list_all_tasks = async(req, res) => {

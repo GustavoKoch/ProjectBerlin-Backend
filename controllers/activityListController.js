@@ -1,4 +1,4 @@
-const ActivityList = require("../MODELS/ActivityList");
+const ActivityList = require("../models/ActivityList");
 
 /* GET ALL */
 const list_all_activityLists = async(req, res) => {
