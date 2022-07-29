@@ -10,7 +10,7 @@ const {
   delete_one_contact,
   delete_many_contacts,
   delete_all_contacts
-} = require("../CONTROLLERS/contactController");
+} = require("../controllers/contactController");
 
 router
 .route("/")

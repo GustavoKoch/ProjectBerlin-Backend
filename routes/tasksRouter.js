@@ -10,7 +10,7 @@ const {
   delete_one_task,
   delete_many_tasks,
   delete_all_tasks
-} = require("../CONTROLLERS/taskController");
+} = require("../controllers/taskController");
 
 router
 .route("/")
