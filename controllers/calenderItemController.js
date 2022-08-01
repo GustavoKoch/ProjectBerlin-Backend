@@ -4,7 +4,7 @@ const CalenderItem = require("../models/CalenderItem");
 const list_all_calenderItems = async(req, res) => {
  
     try {
-      const calenderItems = await CalenderItem.find({}).populate("contacts").populate("activityList");
+      const calenderItems = await CalenderItem.find({}, {start:1, end:1, title:1,activityList:1,contacts:1,img_url:1,category:1, _id:0} ).populate("contacts").populate("activityList");
      
       if (calenderItems.length===0)
       return res.status(404).send("There are no Items in this Calender to show");
