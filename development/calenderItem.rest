@@ -5,13 +5,13 @@
 GET {{host}}
 
 ### Create new calenderItems
-POST {{host}}/calender
+POST {{host}}/calendar
 Content-Type:application/json
 
 [
     {
-        "start": "2022-12-03T21:00:00Z",
         "end":"2022-12-04T03:00:00Z",
+        "start": "2022-12-03T21:00:00Z",        
         "title":"Lunch with my Friends for celebrating Christmas in the mexican Restautant", 
         "description": "Ask before if they have also Vegan meals",
         "activityList":[],    
@@ -100,4 +100,4 @@ Content-Type:application/json
 }
 
 ### Delete All ccalenderItems
-DELETE {{host}}/calender/deleteAll
+DELETE {{host}}/calendar/deleteAll
