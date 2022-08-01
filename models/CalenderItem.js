@@ -3,8 +3,8 @@ const mongoose =require('mongoose');
 const Schema=mongoose.Schema;
 
 const calenderItemSchema = new Schema({
-    starts_date:{type:Date, required:true},
-    ends_date:{type:Date, required:true},
+    start:{type:Date, required:true},
+    end:{type:Date, required:true},
     title:{type:String, min: 2, max:150, required:true},
     description:{type:String, min: 2, max:500, required:true},
     activityList: [{ type: Schema.Types.ObjectId, ref: "ActivityList" }],

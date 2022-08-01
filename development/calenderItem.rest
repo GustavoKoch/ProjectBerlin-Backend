@@ -1,5 +1,5 @@
 @id=62e128e3e713fa9988f9865e
-@host=http://localhost:3001
+@host=http://localhost:3031
 
 
 GET {{host}}
@@ -10,8 +10,8 @@ Content-Type:application/json
 
 [
     {
-        "starts_date": "2022-12-03T21:00:00Z",
-        "ends_date":"2022-12-04T03:00:00Z",
+        "start": "2022-12-03T21:00:00Z",
+        "end":"2022-12-04T03:00:00Z",
         "title":"Lunch with my Friends for celebrating Christmas in the mexican Restautant", 
         "description": "Ask before if they have also Vegan meals",
         "activityList":[],    
@@ -20,8 +20,8 @@ Content-Type:application/json
         "img_url":"https://popmenucloud.com/xrpblwcd/85ba676e-8969-4793-ba64-46c7724547be.jpg"
     },
     {
-        "starts_date": "2022-12-05T18:00:00Z",
-        "ends_date":"2022-12-05T19:00:00Z",
+        "start": "2022-12-05T18:00:00Z",
+        "end":"2022-12-05T19:00:00Z",
         "title":"Meeting for running with Patrick", 
         "description": "training in the Park",
         "activityList":[],    
@@ -30,8 +30,8 @@ Content-Type:application/json
         "img_url":"https://img.theculturetrip.com/1440x/smart/wp-content/uploads/2018/11/p9k2ym.jpg"
     },
     {
-        "starts_date": "2022-12-03T21:00:00Z",
-        "ends_date":"2022-12-04T03:00:00Z",
+        "start": "2022-12-03T21:00:00Z",
+        "end":"2022-12-04T03:00:00Z",
         "title":"Thai massage Meeting", 
         "description": "Made an appointment and paid the half in advance",
         "activityList":[],    
