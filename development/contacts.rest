@@ -9,8 +9,8 @@ POST {{host}}/contacts
 Content-Type:application/json
 
     {
-        "first_name":"Bugs", 
-        "last_name":"Carrots", 
+        "firstName":"Bugs", 
+        "lastName":"Carrots", 
         "birthday":"2022-12-03T21:00:00Z",
         "nameday":"",
         "category": ["friend", "family"], 

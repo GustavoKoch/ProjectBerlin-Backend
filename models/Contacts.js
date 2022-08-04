@@ -3,8 +3,8 @@ const mongoose =require('mongoose');
 const Schema=mongoose.Schema;
 
 const contactSchema = new Schema({
-    first_name:{type:String, min: 2, max:50, required:true}, 
-    last_name:{type:String, min: 2, max:50, required:true}, 
+    firstName:{type:String, min: 2, max:50, required:true}, 
+    lastName:{type:String, min: 2, max:50, required:true}, 
     birthday:{type:Date},
     nameday:{type:Date},
     category: {
