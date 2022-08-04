@@ -8,7 +8,7 @@ const contactSchema = new Schema({
     birthday:{type:Date},
     nameday:{type:Date},
     category: {
-        type:String,
+        type:[String],
         enum:['family', 'friend', 'others']
     },  
     avatar_url:{type:String, min: 2, max:500},
