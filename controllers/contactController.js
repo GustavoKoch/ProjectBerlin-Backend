@@ -76,14 +76,15 @@ const fullUpdate_one_contact = async (req, res) => {
     const updatedcontact = await Contact.findOneAndUpdate({_id:id}, req.body, {
       new: false,
       runValidators: true,
+      upsert:true,
     });
     console.log(updatedcontact);
     if (!updatedcontact)
       return res
         .status(404)
-        .send("This calender Item does not exist, maybe it was deleted before");
+        .send("This contact Item does not exist, maybe it was deleted before");
 
-    res.json(updatedcontact).send("Calender Item patched succesfully!");
+    res.json(updatedcontact).send("Contact Item updated succesfully!");
   } catch {
     (error) => console.log(error.message);
   }
