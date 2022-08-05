@@ -100,7 +100,7 @@ const delete_one_contact = async (req, res) => {
         .status(404)
         .send("This calender-item does not exist, maybe it was deleted before");
     }
-    res.json(deletedcontact).send("CAlender-Item deleted succesfully!");
+    res.send("CAlender-Item deleted succesfully!");
   } catch {
     (error) => console.log(error.message);
   }
