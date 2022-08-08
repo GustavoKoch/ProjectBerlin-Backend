@@ -201,6 +201,22 @@ const list_all_birthdays = async(req, res) => {
   }
 };
 
+
+  /* POST MANY BIRTHDAYS*/
+  const create_many_birthdays= async (req, res) => {
+
+    try {    
+      const newbirthdays= await CalenderItem.create(req.body);  
+      res.json(newbirthdays);
+    } catch {
+      (error) => res.send(error.message);
+    }
+  };
+
+
+
+
+
 module.exports = {
   list_all_calenderItems,
   find_one_calenderItem,
@@ -212,5 +228,6 @@ module.exports = {
   delete_all_calenderItems,
   add_ContactsToCalenderItem,
   add_ActivityListToCalenderItem,
-  list_all_birthdays 
+  list_all_birthdays,
+  create_many_birthdays
 };

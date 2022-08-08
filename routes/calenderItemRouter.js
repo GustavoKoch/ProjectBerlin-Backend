@@ -12,7 +12,8 @@ const {
   delete_all_calenderItems,
   add_ContactsToCalenderItem,
   add_ActivityListToCalenderItem,
-  list_all_birthdays
+  list_all_birthdays,
+  create_many_birthdays
 } = require("../controllers/calenderItemController");
 
 router
@@ -23,6 +24,7 @@ router
 router
 .route("/birthdays")
 .get(list_all_birthdays)
+.post(create_many_birthdays)
 
 router
 .route("/addContacts")
