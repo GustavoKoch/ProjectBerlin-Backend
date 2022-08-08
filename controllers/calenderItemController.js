@@ -185,6 +185,22 @@ const delete_all_calenderItems = async (req, res) => {
     }
   };
 
+
+  /* GET ALL BIRTHDAYS*/
+const list_all_birthdays = async(req, res) => {
+ 
+  try {
+    const birthdays = await CalenderItem.find({"category":"Birthdays"} ).populate("contacts").populate("activityList");
+   
+    if (birthdays.length===0)
+    return res.status(404).send("There are no birthdays in this Calender to show");
+    
+    res.json(birthdays);
+  } catch {
+    (error) => console.log(error.message);
+  }
+};
+
 module.exports = {
   list_all_calenderItems,
   find_one_calenderItem,
@@ -195,5 +211,6 @@ module.exports = {
   delete_many_calenderItems,
   delete_all_calenderItems,
   add_ContactsToCalenderItem,
-  add_ActivityListToCalenderItem 
+  add_ActivityListToCalenderItem,
+  list_all_birthdays 
 };
