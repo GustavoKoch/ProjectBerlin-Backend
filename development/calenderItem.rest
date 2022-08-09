@@ -1,5 +1,6 @@
 @id=62e128e3e713fa9988f9865e
 @host=http://localhost:3031
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmYyOTg1MzhkODMyZTQ3YmI2YTNhZGEiLCJ1c2VyRW1haWwiOiJndXNvMjJAaG90bWFpbC5jb20iLCJpYXQiOjE2NjAwNjg1MzMsImV4cCI6MTY2MDE1NDkzM30.Ib-Fm8ClcXbKLEdSsOx3J0aPVcuZ_TYzlI2pPwd_IzM
 
 
 GET {{host}}
@@ -7,6 +8,7 @@ GET {{host}}
 ### Create new calenderItems
 POST {{host}}/calendar
 Content-Type:application/json
+Authorization: bearer {{token}}
 
 [
     {
@@ -65,9 +67,11 @@ Content-Type: application/json
 
 ### Get all calenderItems
 GET {{host}}/calendar/
+Authorization: bearer {{token}}
 
 ### Get all birthdays
 GET {{host}}/calendar/birthdays/
+Authorization: bearer {{token}}
 
 ### Get one calenderItem by id
 GET {{host}}/calendar/{{id}}

@@ -1,18 +1,18 @@
-require("dotenv").config();
 require("./database/client");
+
 const express = require('express');
 const cors=require("cors");
 
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-require("dotenv").config();
-require("./database/client");
 
+const auth = require("./authentication/auth");
 const calenderItemRouter = require('./routes/calenderItemRouter');
 const contactsRouter = require('./routes/contactsRouter');
 const tasksRouter = require('./routes/tasksRouter');
 const activityListRouter = require('./routes/activityListRouter');
+const userRouter = require('./routes/userRouter');
 
 
 const app = express();
@@ -29,9 +29,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
-app.use('/calendar', calenderItemRouter);
-app.use('/contacts', contactsRouter);
-app.use('/tasks', tasksRouter);
-app.use('/activityList', activityListRouter);
+app.use('/calendar', auth, calenderItemRouter);
+app.use('/contacts', auth, contactsRouter);
+app.use('/tasks', auth, tasksRouter);
+app.use('/activityList', auth, activityListRouter);
+app.use('/users', userRouter);
 
 module.exports = app;

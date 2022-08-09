@@ -1,0 +1,52 @@
+@id=62e1099ac2c6e844f73edc88
+@host=http://localhost:3031
+
+
+GET {{host}}/users
+
+### Create a new user
+POST {{host}}/users/register
+Content-Type:application/json
+
+{
+    "email":"guso22@hotmail.com",
+    "password":"12345"
+}
+### Get all user
+GET {{host}}/users
+
+### Get one usersuser by id
+GET {{host}}/users/{{id}}
+
+### Patch one user
+PATCH {{host}}/users/{{id}}
+Content-Type:application/json
+
+{
+   "key":"description",
+   "value":"Paid nothing in advance"
+}
+
+### UPDATE one user
+PUT {{host}}/users/{{id}}
+Content-Type:application/json
+
+{
+    "starts_date":"2022-12-11T18:00:00.000Z",
+    "description":"2Kg tomatoes"   
+}
+
+### Delete
+DELETE {{host}}/users/{{id}}
+
+### Delete many --> "category":"sports"
+DELETE {{host}}/users
+Content-Type:application/json
+
+{
+   "key":"description",
+   "value":"2Kg tomatoes"
+}
+
+### Delete All cusersusers
+DELETE {{host}}/users/deleteAll

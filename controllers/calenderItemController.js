@@ -204,17 +204,14 @@ const list_all_birthdays = async(req, res) => {
 
   /* POST MANY BIRTHDAYS*/
   const create_many_birthdays= async (req, res) => {
-
+    
     try {    
-      const newbirthdays= await CalenderItem.create(req.body);  
-      res.json(newbirthdays);
+      const newBirthdays= await CalenderItem.create(req.body);  
+      res.json(newBirthdays);
     } catch {
       (error) => res.send(error.message);
     }
   };
-
-
-
 
 
 module.exports = {
