@@ -9,7 +9,7 @@ POST {{host}}/users/register
 Content-Type:application/json
 
 {
-    "email":"guso22@hotmail.com",
+    "email":"guso23@hotmail.com",
     "password":"12345"
 }
 ### Get all user

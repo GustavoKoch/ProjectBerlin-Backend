@@ -27,7 +27,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors());
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    
+}
+app.use(cors(corsOptions));
+
+
+
+
 
 app.use('/calendar', auth, calenderItemRouter);
 app.use('/contacts', auth, contactsRouter);
