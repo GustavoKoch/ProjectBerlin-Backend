@@ -18,12 +18,9 @@ const list_all_users = async (req, res) => {
 };
 
 /* CREATE ONE */
-
-
 const create_one_user = async (req, res) => {
 
   const body = req.body;
-
   if (!(body.email && body.password)) {
     return res.status(400).send({ error: "Data not formatted properly" });
   }

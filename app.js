@@ -28,7 +28,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 const corsOptions ={
-    origin:'*', 
+    origin:
+    [
+        'http://localhost:3000','http://localhost:3001','http://localhost:3002','http://localhost:3003',
+        'http://localhost:3030','http://localhost:3031','http://localhost:3032','http://localhost:3033'
+], 
     credentials:true,            //access-control-allow-credentials:true
     
 }
