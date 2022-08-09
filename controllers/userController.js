@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const list_all_users = async (req, res) => {
 
   try {
-    const Users = await User.find({}).populate("tasks");
+    const Users = await User.find({});
 
     if (Users.length === 0)
       return res.status(404).send("There are no Users to show");
