@@ -5,15 +5,15 @@ const Schema=mongoose.Schema;
 const calenderItemSchema = new Schema({
     start:{type:Date, required:true},
     end:{type:Date, required:true},
-    title:{type:String, min: 2, max:150, required:true},
-    description:{type:String, min: 2, max:500, required:true},
+    title:{type:String, min: 0, max:150, required:true},
+    description:{type:String, min: 0, max:500, required:true},
     activityList: [{ type: Schema.Types.ObjectId, ref: "ActivityList" }],
     contacts: [{ type: Schema.Types.ObjectId, ref: "Contact" }],
     category: {
         type:String,
         enum:['Social events', 'Reminders', 'Birthdays', 'Vacation', 'Sports', 'Personal']
     },  
-    img_url:{type:String, min: 2, max:100}
+    img_url:{type:String, min: 0, max:100}
 
 }, {timestamps:true}
 )
