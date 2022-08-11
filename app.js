@@ -28,13 +28,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 const corsOptions ={
-    origin:
-    [
-        'https://projectberlincalender.netlify.app/'
-    ],
+    origin: 'https://projectberlincalender.netlify.app/'
+
+   
     
 }
-app.use(cors(corsOptions));
+app.use(cors(corsOptions ));
 
 
 
