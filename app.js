@@ -30,15 +30,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 const corsOptions ={
     origin:
     [
-        'http://localhost:3000','http://localhost:3001','http://localhost:3002','http://localhost:3003',
-        'http://localhost:3030','http://localhost:3031','http://localhost:3032','http://localhost:3033', 
         'https://projectberlincalender.netlify.app/'
-],
-    methods :["GET", "PUT", "POST","DELETE" ],
-    credentials:true,            //access-control-allow-credentials:true
+    ],
     
 }
-app.use(cors());
+app.use(cors(corsOptions));
 
 
 
