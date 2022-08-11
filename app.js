@@ -28,6 +28,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 const corsOptions ={
+    origin:
+    
+        'https://projectberlincalender.netlify.app/'
+,
     methods :["GET", "PUT", "POST","DELETE" ],
     credentials:true,            //access-control-allow-credentials:true
     
