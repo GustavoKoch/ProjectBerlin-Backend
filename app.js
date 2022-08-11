@@ -33,7 +33,6 @@ const corsOptions ={
         'http://localhost:3000','http://localhost:3001','http://localhost:3002','http://localhost:3003',
         'http://localhost:3030','http://localhost:3031','http://localhost:3032','http://localhost:3033', 
         'https://62f4be90041b0c000880f7e0--projectberlincalender.netlify.app/',
-        'https://projectberlin-backend.herokuapp.com',
         'https://main--projectberlincalender.netlify.app/'
 ], 
     credentials:true,            //access-control-allow-credentials:true
